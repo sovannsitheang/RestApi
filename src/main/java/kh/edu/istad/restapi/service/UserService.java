@@ -1,18 +1,22 @@
 package kh.edu.istad.restapi.service;
 
 
-import kh.edu.istad.restapi.model.User;
+import kh.edu.istad.restapi.dto.UserResponse;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.UUID;
 
 public interface UserService {
+
+
+    Page<UserResponse> getAllWithPaging(int pageNumber, int pageSize);
+
+
     // logic here
 
-    List<User> getAll();
+    List<UserResponse> getAll();
 
-    User getById(UUID id);
+    UserResponse getById(UUID id);
 
-    User create(User user);
-    void deleteById(UUID id) ;
 }
